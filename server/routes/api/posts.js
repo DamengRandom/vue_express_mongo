@@ -1,7 +1,7 @@
 const express = require('express');
 const mongodb = require('mongodb');
 // const { mongodbClient } = require('../../../config');
-const { MONGODB_URL } = require('../../../config');
+// const { MONGODB_URL } = require('../../../config');
 
 const router = express.Router();
 
@@ -45,7 +45,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 async function loadPostsCollection() {
-  const client = await mongodb.MongoClient.connect(process.env.MONGODB_URL || MONGODB_URL, {
+  const client = await mongodb.MongoClient.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true
   });
 
