@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:4932/api/posts';
+// const url = 'http://localhost:4932/api/posts';
+const url = 'api/posts';
 
 class postService {
   // Get posts
@@ -24,7 +25,7 @@ class postService {
     try {
       return axios.post(url, { text });
     } catch(error) {
-      console.log(error);
+      console.log('(server) Insert error: ', error);
     }
   }
   // Delete post
@@ -32,7 +33,7 @@ class postService {
     try {
       return axios.delete(`${url}/${id}`);
     } catch(error) {
-      console.log(error);
+      console.log('(server) Delete error: ', error);
     }
   }
 }
