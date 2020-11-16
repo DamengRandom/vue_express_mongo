@@ -1,7 +1,7 @@
 const express = require('express');
 const mongodb = require('mongodb');
 // const { mongodbClient } = require('../../../config');
-// const { MONGODB_URL } = require('../../../config');
+const { MONGODB_URL } = require('../../../config');
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const posts = await loadPostsCollection();
-    res.send(await posts.find({}).toArray());  
+    res.send(await posts.find({}).toArray());
   } catch (error) {
     console.log('Error about fetch posts: ', error);
   }

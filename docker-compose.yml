@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  app:
+    image: docker-vue-express-mongo
+    restart: always
+    build: .
+    ports:
+      - '4932:4932'
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    image:  mongo
+    ports:
+      - '27017:27017'
